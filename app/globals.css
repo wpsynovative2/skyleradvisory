@@ -409,3 +409,14 @@ body {
     background-image: linear-gradient(140deg, #ffffff 33%, #ffffff00 59%);
   }
 }
+
+/* ---------------------------------------------------------------
+   reCAPTCHA v3
+---------------------------------------------------------------- */
+
+/* The v3 badge is fixed to the bottom-right, where the floating action rail
+   already sits. Google permits hiding it as long as the attribution text is
+   shown in the form — see components/forms/EnquiryForm.tsx. */
+.grecaptcha-badge {
+  visibility: hidden;
+}

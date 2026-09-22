@@ -22,5 +22,5 @@ export type EnquiryResponse = {
   ok: boolean;
   message: string;
   /** Present when the Apps Script endpoint has not been configured yet. */
-  code?: "not_configured" | "validation" | "upstream" | "server";
+  code?: "not_configured" | "validation" | "recaptcha" | "upstream" | "server";
 };

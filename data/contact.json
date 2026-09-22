@@ -9,6 +9,7 @@
   "submittingLabel": "Sending...",
   "successMessage": "Thank you! Your enquiry has been received. Our team will contact you shortly.",
   "errorMessage": "Something went wrong. Please try again or call us directly.",
+  "verificationErrorMessage": "We could not verify that you are human. Please reload the page and try again, or call us directly.",
   "consentLabel": "I agree to be contacted by SKYLER ADVISORY and their partners via WhatsApp, SMS, Phone, Email etc.",
   "cards": [
     { "icon": "map-pin", "title": "Address", "lines": ["Plot 20, B/908, Sector 9, Ghansoli,", "Navi Mumbai, Maharashtra 400701"] },

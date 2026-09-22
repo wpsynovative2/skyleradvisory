@@ -5,6 +5,7 @@ import Link from "next/link";
 import { CircleCheckBig, TriangleAlert } from "lucide-react";
 import contact from "@/data/contact.json";
 import Loader from "@/components/ui/Loader";
+import { RECAPTCHA_ACTION, executeRecaptcha, recaptchaEnabled } from "@/lib/recaptcha";
 import type { EnquiryResponse, FormFieldConfig } from "@/lib/types";
 
 const fields = contact.fields as FormFieldConfig[];
@@ -45,6 +46,15 @@ export default function EnquiryForm({ source = "Contact Section" }: { source?: s
 
     setStatus("submitting");
     setFeedback("");
+
+    // reCAPTCHA v3 token — minted per submission and valid for two minutes.
+    try {
+      payload.recaptchaToken = await executeRecaptcha(RECAPTCHA_ACTION);
+    } catch {
+      setStatus("error");
+      setFeedback(contact.verificationErrorMessage);
+      return;
+    }
 
     try {
       const response = await fetch("/api/enquiry", {
@@ -205,6 +215,33 @@ export default function EnquiryForm({ source = "Contact Section" }: { source?: s
         </Link>
         .
       </p>
+
+      {/* Required by Google whenever the reCAPTCHA badge is hidden — the badge
+          is suppressed in globals.css because the floating action rail sits in
+          the same corner. */}
+      {recaptchaEnabled ? (
+        <p className="text-[11px] leading-relaxed text-muted">
+          This site is protected by reCAPTCHA and the Google{" "}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-2 hover:text-navy"
+          >
+            Privacy Policy
+          </a>{" "}
+          and{" "}
+          <a
+            href="https://policies.google.com/terms"
+            target="_blank"
+            rel="noreferrer"
+            className="underline underline-offset-2 hover:text-navy"
+          >
+            Terms of Service
+          </a>{" "}
+          apply.
+        </p>
+      ) : null}
     </form>
   );
 }

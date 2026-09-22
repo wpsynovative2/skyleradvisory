@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Baskervville, DM_Sans, Expletus_Sans, Jost, Poppins } from "next/font/google";
 import localFont from "next/font/local";
+import Script from "next/script";
 import site from "@/data/site.json";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -10,6 +11,7 @@ import DisclaimerGate from "@/components/ui/DisclaimerGate";
 import PageLoader from "@/components/ui/PageLoader";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import { EnquiryModalProvider } from "@/components/ui/EnquiryModalProvider";
+import { RECAPTCHA_SCRIPT_SRC, recaptchaEnabled } from "@/lib/recaptcha";
 import "./globals.css";
 
 /* The five families the original site loads, self-hosted by next/font. */
@@ -131,6 +133,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <EnquiryModal />
           <DisclaimerGate />
         </EnquiryModalProvider>
+
+        {/* reCAPTCHA v3 scores the whole visit, so it loads site-wide rather
+            than only where a form is on screen. Skipped when no key is set. */}
+        {recaptchaEnabled ? (
+          <Script id="recaptcha-v3" src={RECAPTCHA_SCRIPT_SRC} strategy="afterInteractive" />
+        ) : null}
       </body>
     </html>
   );

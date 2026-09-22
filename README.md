@@ -18,6 +18,53 @@ npm run lint         # eslint
 
 Form submissions need one extra step — see
 [Google Sheets + email setup](./google-apps-script/README.md).
+To put the site on a server, see [Deployment](./DEPLOYMENT.md).
+
+---
+
+## Spam protection
+
+Every enquiry goes through three checks before it reaches the Google Sheet:
+
+1. **Honeypot** — a hidden `company` field. Humans never see it; bots fill it.
+2. **Server-side validation** — name, phone, email and consent are re-checked in
+   `app/api/enquiry/route.ts`, not just in the browser.
+3. **Google reCAPTCHA v3** — invisible, no checkbox. The visitor is scored from
+   0.0 (bot) to 1.0 (human) and low scores are rejected.
+
+### Setting up reCAPTCHA
+
+1. Go to <https://www.google.com/recaptcha/admin/create>.
+2. Choose **Score based (v3)** and add every domain the site runs on —
+   `skyleradvisory.com`, `www.skyleradvisory.com`, and `localhost` for testing.
+3. Copy the two keys into `.env.local`:
+
+```bash
+NEXT_PUBLIC_RECAPTCHA_SITE_KEY=6Lc...   # public, goes to the browser
+RECAPTCHA_SECRET_KEY=6Lc...             # server-side only, never commit
+RECAPTCHA_MIN_SCORE=0.5                 # optional, defaults to 0.5
+```
+
+4. Restart the dev server.
+
+**Both keys are optional.** Leave them blank and the form works exactly as
+before, minus the score check — useful on a machine that has no keys yet. Once
+`RECAPTCHA_SECRET_KEY` is set, a submission without a valid token is refused.
+
+> `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` is baked into the browser bundle **at build
+> time**. Change it and you must rebuild — setting it on the server afterwards
+> has no effect. `RECAPTCHA_SECRET_KEY` is read at runtime, so it can change
+> without a rebuild.
+
+**Tuning the threshold.** Each submission logs its score
+(`[enquiry] reCAPTCHA score 0.9 for ...`). Watch the logs for a week before
+moving `RECAPTCHA_MIN_SCORE`. Raising it past `0.7` starts blocking real people
+on VPNs and shared office IPs; `0.5` is Google's recommended starting point.
+
+The v3 badge is hidden in `app/globals.css` because the floating action rail
+occupies the same corner. Google allows this only when the attribution line is
+shown instead — it sits under the submit button in `EnquiryForm.tsx`. **Do not
+remove that text without un-hiding the badge.**
 
 ---
 
@@ -83,7 +130,7 @@ app/
   layout.tsx              fonts, metadata, header/footer, providers
   page.tsx                the one-page site — sections in order
   loading.tsx             route-level loader
-  api/enquiry/route.ts    validates submissions, forwards to Apps Script
+  api/enquiry/route.ts    validates submissions, verifies reCAPTCHA, forwards to Apps Script
   privacy-policy/ terms-and-conditions/ disclaimer/
 components/
   layout/                 Header, Footer, FloatingActions
@@ -91,7 +138,9 @@ components/
   forms/                  EnquiryForm, EnquiryModal
   ui/                     Loader, Reveal, Counter, Modal, Icon, …
 data/                     all site copy as JSON
-lib/types.ts              shared types
+lib/
+  types.ts                shared types
+  recaptcha.ts            reCAPTCHA v3 keys, action name, token helper
 public/
   images/  fonts/  skyler-brochure.pdf
 google-apps-script/       Code.gs + setup guide
@@ -131,7 +180,7 @@ Use it anywhere with `<Loader />`. Variants: `brand` (navy/gold, the default),
 
 - All animation is disabled under `prefers-reduced-motion`.
 - The disclaimer gate is acknowledged once per browser (`localStorage`).
-- The enquiry form has a honeypot field and server-side validation on name,
-  phone, email and consent.
+- The enquiry form has a honeypot field, server-side validation on name, phone,
+  email and consent, and an invisible reCAPTCHA v3 check (see Spam protection).
 - Section anchors (`#about-us`, `#our-projects`, …) match the original URLs, so
   existing links keep working.

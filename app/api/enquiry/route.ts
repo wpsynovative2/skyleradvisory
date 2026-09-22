@@ -1,6 +1,7 @@
 import type { NextRequest } from "next/server";
 import contact from "@/data/contact.json";
 import site from "@/data/site.json";
+import { RECAPTCHA_ACTION } from "@/lib/recaptcha";
 import type { EnquiryResponse } from "@/lib/types";
 
 /**
@@ -17,8 +18,64 @@ const REQUIRED_FIELDS = ["name", "phone", "email"] as const;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const DIGITS_ONLY = /\D/g;
 
+const RECAPTCHA_VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify";
+const DEFAULT_MIN_SCORE = 0.5;
+
 function json(body: EnquiryResponse, status: number) {
   return Response.json(body, { status });
+}
+
+type RecaptchaResult = { ok: true; score?: number } | { ok: false; reason: string };
+
+/**
+ * Exchanges the browser's reCAPTCHA v3 token for a score with Google and
+ * decides whether the submission looks human.
+ *
+ * With no RECAPTCHA_SECRET_KEY set the check is skipped, so the form keeps
+ * working on an environment where the keys have not been added yet. Once the
+ * secret is set the check is mandatory — a missing or stale token is rejected.
+ */
+async function verifyRecaptcha(token: string, remoteIp: string): Promise<RecaptchaResult> {
+  const secret = process.env.RECAPTCHA_SECRET_KEY;
+
+  if (!secret) {
+    console.warn("[enquiry] RECAPTCHA_SECRET_KEY is not set — skipping spam check.");
+    return { ok: true };
+  }
+
+  if (!token) return { ok: false, reason: "missing token" };
+
+  const minScore = Number(process.env.RECAPTCHA_MIN_SCORE ?? DEFAULT_MIN_SCORE);
+  const threshold = Number.isFinite(minScore) ? minScore : DEFAULT_MIN_SCORE;
+
+  const body = new URLSearchParams({ secret, response: token });
+  if (remoteIp) body.set("remoteip", remoteIp);
+
+  let result: { success?: boolean; score?: number; action?: string; "error-codes"?: string[] };
+
+  try {
+    const response = await fetch(RECAPTCHA_VERIFY_URL, { method: "POST", body, cache: "no-store" });
+    result = await response.json();
+  } catch (error) {
+    // Google unreachable. Let the enquiry through rather than lose a real lead.
+    console.error("[enquiry] reCAPTCHA verification failed to reach Google:", error);
+    return { ok: true };
+  }
+
+  if (!result.success) {
+    return { ok: false, reason: `rejected: ${(result["error-codes"] ?? ["unknown"]).join(", ")}` };
+  }
+
+  // A token minted for a different action is a token lifted from elsewhere.
+  if (result.action && result.action !== RECAPTCHA_ACTION) {
+    return { ok: false, reason: `unexpected action "${result.action}"` };
+  }
+
+  if (typeof result.score === "number" && result.score < threshold) {
+    return { ok: false, reason: `score ${result.score} below ${threshold}` };
+  }
+
+  return { ok: true, score: result.score };
 }
 
 export async function POST(request: NextRequest) {
@@ -56,6 +113,22 @@ export async function POST(request: NextRequest) {
       { ok: false, message: "Please accept the consent checkbox to continue.", code: "validation" },
       400,
     );
+  }
+
+  // --- Spam check -----------------------------------------------------------
+  const forwardedFor = request.headers.get("x-forwarded-for") ?? "";
+  const verification = await verifyRecaptcha(
+    value("recaptchaToken"),
+    forwardedFor.split(",")[0].trim(),
+  );
+
+  if (!verification.ok) {
+    console.warn("[enquiry] reCAPTCHA blocked a submission —", verification.reason);
+    return json({ ok: false, message: contact.verificationErrorMessage, code: "recaptcha" }, 400);
+  }
+
+  if (verification.score !== undefined) {
+    console.log(`[enquiry] reCAPTCHA score ${verification.score} for ${value("email")}`);
   }
 
   // --- Payload --------------------------------------------------------------
