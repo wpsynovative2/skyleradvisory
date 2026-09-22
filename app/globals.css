@@ -1,26 +1,411 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------
+   Design tokens — extracted from the live Skyler Advisory site
+   (Elementor kit: primary #282360, accent #BC6C25, amber #F09545)
+---------------------------------------------------------------- */
+@theme {
+  /* Palette lifted from the live site's Elementor kit */
+  --color-navy: #282360;
+  --color-navy-deep: #1b1840;
+  --color-orange: #bc6c25;
+  --color-amber: #f09545;
+  --color-cream: #fffcf4;
+  --color-ink: #020101;
+  --color-body: #333333;
+  --color-slate: #525252;
+  --color-muted: #7a7a7a;
+  --color-line: #dddddd;
+  --color-line-soft: #e6e6e6;
+  --color-ghost: #c7c7c7;
+  --color-paper: #fdfdff;
+
+  --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-baskervville), ui-serif, Georgia, serif;
+  --font-label: var(--font-expletus), ui-sans-serif, system-ui, sans-serif;
+  --font-card: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-numeric: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-brand: var(--font-monari), var(--font-baskervville), ui-serif, serif;
+  --font-script: var(--font-shunsine), ui-serif, cursive;
+}
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #020101;
+  --header-h: 86px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  border-color: var(--color-line);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+::selection {
+  background: var(--color-navy);
+  color: #ffffff;
+}
+
+/* Thin scrollbar that matches the palette */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f4f4f7;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy);
+  border-radius: 9999px;
+  border: 2px solid #f4f4f7;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-navy-deep);
+}
+
+/* ---------------------------------------------------------------
+   Loader — the four-ring SVG spinner used site-wide
+---------------------------------------------------------------- */
+.pl {
+  width: 6em;
+  height: 6em;
+}
+
+.pl__ring {
+  animation: ringA 2s linear infinite;
+}
+
+.pl__ring--a {
+  stroke: #000000;
+}
+
+.pl__ring--b {
+  animation-name: ringB;
+  stroke: #7e7e7e;
+}
+
+.pl__ring--c {
+  animation-name: ringC;
+  stroke: #686868;
+}
+
+.pl__ring--d {
+  animation-name: ringD;
+  stroke: #000000;
+}
+
+/* Brand-tinted variant (navy / orange) for use on light surfaces */
+.pl--brand .pl__ring--a {
+  stroke: var(--color-navy);
+}
+.pl--brand .pl__ring--b {
+  stroke: var(--color-orange);
+}
+.pl--brand .pl__ring--c {
+  stroke: var(--color-amber);
+}
+.pl--brand .pl__ring--d {
+  stroke: var(--color-navy);
+}
+
+/* Inverted variant for dark / navy surfaces */
+.pl--light .pl__ring--a {
+  stroke: #ffffff;
+}
+.pl--light .pl__ring--b {
+  stroke: var(--color-orange);
+}
+.pl--light .pl__ring--c {
+  stroke: #cbcbd8;
+}
+.pl--light .pl__ring--d {
+  stroke: #ffffff;
+}
+
+@keyframes ringA {
+  from,
+  4% {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -330;
+  }
+  12% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -335;
+  }
+  32% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -595;
+  }
+  40%,
+  54% {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -660;
+  }
+  62% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -665;
+  }
+  82% {
+    stroke-dasharray: 60 600;
+    stroke-width: 30;
+    stroke-dashoffset: -925;
+  }
+  90%,
+  to {
+    stroke-dasharray: 0 660;
+    stroke-width: 20;
+    stroke-dashoffset: -990;
+  }
+}
+
+@keyframes ringB {
+  from,
+  12% {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -110;
+  }
+  20% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -115;
+  }
+  40% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -195;
+  }
+  48%,
+  62% {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+  70% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+  90% {
+    stroke-dasharray: 20 200;
+    stroke-width: 30;
+    stroke-dashoffset: -305;
+  }
+  98%,
+  to {
+    stroke-dasharray: 0 220;
+    stroke-width: 20;
+    stroke-dashoffset: -330;
+  }
+}
+
+@keyframes ringC {
+  from {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: 0;
+  }
+  8% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -5;
+  }
+  28% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -175;
+  }
+  36%,
+  58% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+  66% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+  86% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -395;
+  }
+  94%,
+  to {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -440;
+  }
+}
+
+@keyframes ringD {
+  from,
+  8% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: 0;
+  }
+  16% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -5;
+  }
+  36% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -175;
+  }
+  44%,
+  50% {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -220;
+  }
+  58% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -225;
+  }
+  78% {
+    stroke-dasharray: 40 400;
+    stroke-width: 30;
+    stroke-dashoffset: -395;
+  }
+  86%,
+  to {
+    stroke-dasharray: 0 440;
+    stroke-width: 20;
+    stroke-dashoffset: -440;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Scroll reveal + utility animations
+---------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.animate-floaty {
+  animation: floaty 6s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(240, 149, 69, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(240, 149, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(240, 149, 69, 0);
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.2s ease-out infinite;
+}
+
+/* ---------------------------------------------------------------
+   Project title — filled first word, outlined remainder
+   (matches the Poppins 65/700 treatment on the original slider)
+---------------------------------------------------------------- */
+.project-title {
+  font-family: var(--font-numeric);
+  font-weight: 700;
+  line-height: 1.05;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-navy);
+}
+
+.project-title .filled {
+  color: var(--color-navy);
+  -webkit-text-stroke: 0;
+}
+
+/* Vertical section label, e.g. "OUR PROJECTS" beside the slider */
+.vertical-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--font-numeric);
+  font-weight: 800;
+  color: var(--color-line);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Typed-heading caret parity with the original (cursor hidden, as configured) */
+.typed-caret {
+  display: inline-block;
+  width: 0;
+}
+
+/* ---------------------------------------------------------------
+   Hero overlay — white wash from the left, taken verbatim from the
+   original's background-overlay settings:
+   linear, 89deg, #FFFFFF at 35% -> transparent at 55%, opacity 0.8.
+   Below 768px the original switches the angle and stops to 140deg / 33% / 59%.
+---------------------------------------------------------------- */
+.hero-wash {
+  background-image: linear-gradient(89deg, #ffffff 35%, #ffffff00 55%);
+  opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+  .hero-wash {
+    background-image: linear-gradient(140deg, #ffffff 33%, #ffffff00 59%);
+  }
 }

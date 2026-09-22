@@ -1,0 +1,27 @@
+{
+  "id": "contact-us",
+  "heading": { "prefix": "Get", "typed": "in", "suffix": "Touch" },
+  "description": "Ready to discuss your real estate project? Reach out to our team to explore how we can support your sales, strategy, and execution needs.",
+  "infoTitle": "Contact Information",
+  "infoDescription": "Connect with us to discuss project opportunities, partnerships, or collaboration across Mumbai's real estate markets.",
+  "formTitle": "Fill the form to connect with us.",
+  "submitLabel": "Send Enquiry",
+  "submittingLabel": "Sending...",
+  "successMessage": "Thank you! Your enquiry has been received. Our team will contact you shortly.",
+  "errorMessage": "Something went wrong. Please try again or call us directly.",
+  "consentLabel": "I agree to be contacted by SKYLER ADVISORY and their partners via WhatsApp, SMS, Phone, Email etc.",
+  "cards": [
+    { "icon": "map-pin", "title": "Address", "lines": ["Plot 20, B/908, Sector 9, Ghansoli,", "Navi Mumbai, Maharashtra 400701"] },
+    { "icon": "phone", "title": "Phone", "lines": ["+91 9819724955", "+91 9702573303"], "hrefs": ["tel:+919819724955", "tel:+919702573303"] },
+    { "icon": "mail", "title": "Email", "lines": ["info@skyleradvisory.com", "skylerproperty@gmail.com"], "hrefs": ["mailto:info@skyleradvisory.com", "mailto:skylerproperty@gmail.com"] },
+    { "icon": "clock", "title": "Office Time", "lines": ["Mon-Sat : 8am-6pm", "Sunday : Closed"] }
+  ],
+  "fields": [
+    { "name": "name", "label": "Full Name", "type": "text", "placeholder": "Your Name", "required": true, "autoComplete": "name" },
+    { "name": "phone", "label": "Phone Number", "type": "tel", "placeholder": "+91 XXXXX-XXXXX", "required": true, "autoComplete": "tel" },
+    { "name": "email", "label": "Email Address", "type": "email", "placeholder": "your@email.com", "required": true, "autoComplete": "email" },
+    { "name": "requirement", "label": "Property Requirement", "type": "select", "required": true, "placeholder": "Buy", "options": ["Buy", "Sell", "Rent", "Lease"] },
+    { "name": "projectType", "label": "Project Type", "type": "select", "required": true, "placeholder": "Select a project type", "options": ["Residential Project", "Commercial Project", "Industrial / Land", "Other...."] },
+    { "name": "location", "label": "Preferred Location", "type": "text", "placeholder": "Your Preferred Location", "required": false, "autoComplete": "off" }
+  ]
+}

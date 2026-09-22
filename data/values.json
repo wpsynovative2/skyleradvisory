@@ -1,0 +1,10 @@
+{
+  "heading": { "prefix": "The Principles Behind", "typed": "Every Decision", "suffix": "" },
+  "description": "At Skyler, our values are more than guiding principles. They shape how we approach every project, partnership, and opportunity. By staying true to these principles, we build trust, strengthen relationships, and deliver consistent results across every engagement",
+  "items": [
+    { "title": "GROWTH", "description": "Continuously improving and adapting to market needs.", "image": "/images/growth.webp" },
+    { "title": "INTEGRITY", "description": "Building relationships through transparency and trust.", "image": "/images/intigrity.webp" },
+    { "title": "ACCOUNTABILITY", "description": "Taking ownership of every project we undertake.", "image": "/images/accountability.webp" },
+    { "title": "EXECUTION", "description": "Turning plans into measurable outcomes.", "image": "/images/execution.webp" }
+  ]
+}

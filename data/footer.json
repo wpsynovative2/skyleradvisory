@@ -1,0 +1,35 @@
+{
+  "background": "/images/photos-bg.jpg",
+  "brand": { "lead": "Skyler", "accent": "Advisory" },
+  "about": "Skyler Advisory is a real estate consulting firm focused on delivering strategic planning, strong execution, and consistent sales performance across residential and commercial projects in Mumbai. We work closely with developers to improve project visibility, accelerate sales, and ensure structured execution across every stage of the project lifecycle.",
+  "socials": [
+    { "name": "WhatsApp", "icon": "whatsapp", "href": "https://api.whatsapp.com/send?phone=919819724955&text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20real%20estate%20mandate%20services.%20Please%20connect%20with%20me." },
+    { "name": "Facebook", "icon": "facebook", "href": "#" },
+    { "name": "Instagram", "icon": "instagram", "href": "#" },
+    { "name": "YouTube", "icon": "youtube", "href": "#" }
+  ],
+  "quickLinksTitle": "Quick Links",
+  "quickLinks": [
+    { "label": "ABOUT US", "href": "#about-us" },
+    { "label": "OUR PROJECTS", "href": "#our-projects" },
+    { "label": "SERVICES", "href": "#Services" },
+    { "label": "ACHIEVEMENTS", "href": "#achievements" },
+    { "label": "TEAM MEMBERS", "href": "#team-members" },
+    { "label": "CONTACT US", "href": "#contact-us" }
+  ],
+  "servicesTitle": "Services",
+  "services": [
+    { "label": "Residential Project Sales", "href": "#Services" },
+    { "label": "Commercial Projects Sales", "href": "#Services" },
+    { "label": "Strategic Sales Planniing", "href": "#Services" },
+    { "label": "Cash Flow Management", "href": "#Services" },
+    { "label": "Developer Coordination & Execution", "href": "#Services" }
+  ],
+  "getInTouchTitle": "Get In Touch",
+  "contacts": [
+    { "icon": "phone", "value": "+91 98197-24955", "caption": "Call us", "href": "tel:+919819724955" },
+    { "icon": "mail", "value": "info@skyleradvisory.com", "caption": "Email us", "href": "mailto:info@skyleradvisory.com" },
+    { "icon": "map-pin", "value": "Address", "caption": "Plot 20, B/908, Sector 9, Ghansoli, Navi Mumbai, Maharashtra 400701", "href": "" }
+  ],
+  "disclaimer": "Disclaimer: The information provided on this website is for general informational and marketing purposes only. Skyler Advisory acts as a real estate mandate and advisory platform connecting buyers, investors, developers, and property owners. All property details, pricing, availability, specifications, images, and project information are subject to change without prior notice and may vary as per the developer's final approvals and agreements. Images used on the website are for illustrative and representation purposes only. Skyler Advisory does not guarantee the accuracy, completeness, or availability of any property listed and advises users to independently verify all details before making any investment or purchase decision. Terms and conditions apply."
+}

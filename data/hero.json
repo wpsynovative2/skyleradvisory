@@ -1,0 +1,21 @@
+{
+  "eyebrow": "BUILDING VALUE",
+  "titleLines": ["Through Strategic", "Mandate "],
+  "titleAccent": "Execution",
+  "description": [
+    "We transform real estate projects into structured success stories",
+    "through focused mandate partnerships, data-driven planning,",
+    "and on-the-ground execution strength."
+  ],
+  "background": "/images/desktop-hero-section-1.png",
+  "actions": [
+    { "label": "Explore Projects", "href": "#our-projects", "variant": "solid" },
+    { "label": "Our Services", "href": "#Services", "variant": "outline" }
+  ],
+  "highlights": [
+    { "icon": "buildings", "title": "Strategic Mandates", "description": "Focused sales planning and execution for real estate projects." },
+    { "icon": "map-marked", "title": "Strong Market Presence", "description": "Deep reach across Western & Central Mumbai micro-markets." },
+    { "icon": "user-check", "title": "Execution-Led Approach", "description": "On-ground sales strategy driven by performance and speed." },
+    { "icon": "handshake", "title": "End-to-End Mandate Support", "description": "From planning to closure, we manage complete sales execution for developers." }
+  ]
+}

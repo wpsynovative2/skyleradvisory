@@ -1,0 +1,66 @@
+{
+  "id": "Services",
+  "label": "OUR SERVICES",
+  "subtitle": "Delivering structured sales, planning, and execution for real estate projects",
+  "heading": {
+    "prefix": "Trusted support for",
+    "typed": "successful project delivery",
+    "suffix": ""
+  },
+  "image": "/images/bg-image2.png",
+  "hoverBackground": "/images/bg-image2.png",
+  "items": [
+    {
+      "slug": "residential-project-sales",
+      "icon": "building",
+      "title": "Residential Project Sales",
+      "scope": "Strategic sales planning and execution for residential developments across key Mumbai micro-markets, focused on driving visibility, buyer engagement, and faster inventory movement.",
+      "offerings": [
+        "Market Analysis",
+        "Pricing Strategy",
+        "Buyer Engagement",
+        "Sales Execution",
+        "Inventory Movement"
+      ]
+    },
+    {
+      "slug": "commercial-project-sales",
+      "icon": "city",
+      "title": "Commercial Project Sales",
+      "scope": "Focused commercial sales solutions designed to position projects effectively and connect with the right business and investment audience.",
+      "offerings": [
+        "Commercial Market Understanding",
+        "Corporate & Investor Outreach",
+        "Negotiation Support",
+        "Deal Closure Assistance",
+        "Execution Planning"
+      ]
+    },
+    {
+      "slug": "strategic-sales-planning",
+      "icon": "chart",
+      "title": "Strategic Sales Planning",
+      "scope": "Structured sales strategies aligned with project goals, market demand, and execution timelines to maximize overall project performance.",
+      "offerings": [
+        "Market Research",
+        "Project Positioning",
+        "Launch Strategy",
+        "Sales Planning",
+        "Revenue & Cash Flow Planning"
+      ]
+    },
+    {
+      "slug": "developer-coordination",
+      "icon": "handshake",
+      "title": "Developer Coordination & Execution",
+      "scope": "Seamless coordination and on-ground execution support to ensure smooth project operations and consistent sales performance.",
+      "offerings": [
+        "Project Coordination",
+        "Timeline Management",
+        "Execution Monitoring",
+        "Performance Reporting",
+        "Sales Support Management"
+      ]
+    }
+  ]
+}

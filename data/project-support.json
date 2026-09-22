@@ -1,0 +1,11 @@
+{
+  "heading": { "prefix": "Our", "typed": "Role", "suffix": "in Projects" },
+  "description": "We work closely with developers to ensure structured planning, strong execution, and consistent sales performance across every stage of a project.",
+  "items": [
+    { "icon": "sitemap", "title": "Project Planning Support", "description": "Helping structure clear strategies for better project direction and outcomes." },
+    { "icon": "chart", "title": "Sales Execution Management", "description": "Driving on-ground execution to ensure consistent project performance." },
+    { "icon": "compass", "title": "Market Positioning Support", "description": "Placing projects effectively to improve visibility and demand." },
+    { "icon": "landmark", "title": "Buyer & Investor Engagement", "description": "Ensuring the right audience connects with the right project opportunities." },
+    { "icon": "calendar-check", "title": "Progress Coordination", "description": "Maintaining smooth alignment between planning, execution, and timelines." }
+  ]
+}

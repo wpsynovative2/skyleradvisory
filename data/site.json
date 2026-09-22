@@ -1,0 +1,106 @@
+{
+  "name": "Skyler Advisory",
+  "legalName": "Skyler Real Estate Advisory",
+  "tagline": "Building Value Through Strategic Mandate Execution",
+  "description": "Skyler Advisory is a real estate consulting firm focused on delivering strategic planning, strong execution, and consistent sales performance across residential and commercial projects in Mumbai.",
+  "url": "https://skyleradvisory.com",
+  "logo": "/images/skyler-logo-png.png",
+  "logoMark": "/images/logo-01.svg",
+  "brochure": "/skyler-brochure.pdf",
+  "establishedYear": 2019,
+  "copyrightYear": 2026,
+  "credit": {
+    "label": "Design And Developed BY:",
+    "name": "SYNOVATIVE",
+    "url": "https://synovative.in/synovative-in/"
+  },
+  "nav": [
+    {
+      "label": "ABOUT US",
+      "href": "#about-us"
+    },
+    {
+      "label": "OUR PROJECTS",
+      "href": "#our-projects"
+    },
+    {
+      "label": "SERVICES",
+      "href": "#Services"
+    },
+    {
+      "label": "ACHIEVEMENTS",
+      "href": "#achievements"
+    },
+    {
+      "label": "TEAM MEMBERS",
+      "href": "#team-members"
+    },
+    {
+      "label": "CONTACT US",
+      "href": "#contact-us"
+    }
+  ],
+  "cta": {
+    "label": "Enquire Now"
+  },
+  "contact": {
+    "address": "Plot 20, B/908, Sector 9, Ghansoli, Navi Mumbai, Maharashtra 400701",
+    "addressLines": [
+      "Plot 20, B/908, Sector 9,",
+      "Ghansoli, Navi Mumbai,",
+      "Maharashtra 400701"
+    ],
+    "mapUrl": "https://maps.google.com/?q=Plot+20,+B/908,+Sector+9,+Ghansoli,+Navi+Mumbai,+Maharashtra+400701",
+    "phones": [
+      "+91 9819724955",
+      "+91 9702573303"
+    ],
+    "emails": [
+      "info@skyleradvisory.com",
+      "skylerproperty@gmail.com"
+    ],
+    "whatsapp": "919819724955",
+    "hours": [
+      {
+        "days": "Mon - Sat",
+        "time": "8am - 6pm"
+      },
+      {
+        "days": "Sunday",
+        "time": "Closed"
+      }
+    ],
+    "whatsappUrl": "https://api.whatsapp.com/send?phone=919819724955&text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20real%20estate%20mandate%20services.%20Please%20connect%20with%20me."
+  },
+  "legalLinks": [
+    {
+      "label": "Privacy Policy",
+      "href": "/privacy-policy"
+    },
+    {
+      "label": "Terms & Conditions",
+      "href": "/terms-and-conditions"
+    },
+    {
+      "label": "Disclaimer",
+      "href": "/disclaimer"
+    }
+  ],
+  "floating": [
+    {
+      "label": "Whatsapp",
+      "icon": "whatsapp",
+      "href": "https://api.whatsapp.com/send?phone=919819724955&text=Hello!%20I%20would%20like%20to%20know%20more%20about%20your%20real%20estate%20mandate%20services.%20Please%20connect%20with%20me."
+    },
+    {
+      "label": "Brochure",
+      "icon": "brochure",
+      "action": "brochure"
+    },
+    {
+      "label": "Call us",
+      "icon": "phone",
+      "href": "tel:+919819724955"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "disclaimer": {
+    "slug": "disclaimer",
+    "title": "Disclaimer",
+    "heading": "Important Information About Properties Disclaimer",
+    "acceptLabel": "I Acknowledge & Proceed",
+    "paragraphs": [
+      "The information on this website is provided for informational and marketing purposes only. Skyler Advisory is a real estate advisory platform and does not guarantee the accuracy, completeness, or timeliness of any property information, pricing, availability, specifications, or project details listed herein. All such information is subject to change without notice and is contingent upon developer approvals and market conditions.",
+      "Property images are for illustrative purposes only and may not reflect actual properties or final project outcomes. Users must independently verify all details, including legal documentation, regulatory compliance, and pricing, before making any investment or purchase decisions. Skyler Advisory shall not be liable for any losses, damages, or claims arising from reliance on website information or from any transactions conducted through this platform.",
+      "All property transactions are subject to applicable real estate laws, regulations, and agreements with developers. Users are advised to seek independent legal and financial counsel before proceeding with any property-related decisions. By using this website, you accept full responsibility for your reliance on any information provided and agree to these terms and conditions."
+    ],
+    "points": []
+  },
+  "privacy": {
+    "slug": "privacy-policy",
+    "title": "Privacy Policy",
+    "heading": "We respect your privacy and are committed to protecting your personal information.",
+    "acceptLabel": "Accept & Continue",
+    "paragraphs": [],
+    "points": [
+      { "term": "Information Collected", "text": "Name, phone number, email, and any details you submit through the form." },
+      { "term": "Usage", "text": "Your information is used to contact you regarding this residential project, share updates, offers, and respond to your inquiries." },
+      { "term": "Consent", "text": "By submitting the form, you agree to receive communication via call, SMS, email, or WhatsApp." },
+      { "term": "Data Sharing", "text": "We do not sell your personal data. It may be shared with our authorized sales and marketing partners strictly for project-related communication." },
+      { "term": "Data Security", "text": "We take reasonable steps to protect your information from unauthorized access or misuse." },
+      { "term": "Your Rights", "text": "You may request to access, update, or delete your personal data by contacting us." }
+    ],
+    "closing": "By using this website and submitting your details, you agree to this Privacy Policy."
+  },
+  "terms": {
+    "slug": "terms-and-conditions",
+    "title": "Terms & Conditions",
+    "heading": "By submitting this form, you agree to the following:",
+    "acceptLabel": "Accept & Continue",
+    "paragraphs": [],
+    "points": [
+      { "term": "", "text": "You consent to be contacted via call, SMS, email, or WhatsApp regarding this residential project." },
+      { "term": "", "text": "The information provided by you is accurate to the best of your knowledge." },
+      { "term": "", "text": "Submission of this form does not constitute a booking or any legal commitment." },
+      { "term": "", "text": "All project details, including pricing, plans, and specifications, are subject to change without prior notice." },
+      { "term": "", "text": "Images and visuals are for illustrative purposes only." },
+      { "term": "", "text": "Your data will be used as per our Privacy Policy." }
+    ],
+    "closing": ""
+  }
+}

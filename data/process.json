@@ -1,0 +1,10 @@
+{
+  "label": "WORK PROCESS",
+  "title": "Our Mandate Execution Process",
+  "steps": [
+    { "step": "01", "icon": "clipboard", "title": "Mandate Understanding", "description": "In-depth analysis of project requirements and market positioning" },
+    { "step": "02", "icon": "strategy", "title": "Strategic Planning", "description": "Development of comprehensive sales and marketing strategy" },
+    { "step": "03", "icon": "rocket", "title": "Execution", "description": "Implementation of strategies with market activation and buyer engagement" },
+    { "step": "04", "icon": "chart-bar", "title": "Monitoring & Optimization", "description": "Continuous tracking and optimization of sales performance" }
+  ]
+}

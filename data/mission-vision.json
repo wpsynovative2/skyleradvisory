@@ -1,0 +1,30 @@
+{
+  "items": [
+    {
+      "key": "mission",
+      "title": "Our Mission",
+      "image": "/images/our-mission.png",
+      "imageFirst": true,
+      "statement": "To deliver exceptional real estate advisory services through transparency, strategic planning, and result-driven execution that creates measurable value for every project we work on.",
+      "points": [
+        "Deliver transparency in every project engagement",
+        "Execute strong, focused marketing and sales strategies",
+        "Drive consistent, result-oriented performance across developments"
+      ],
+      "cta": { "label": "Explore Our Work", "href": "#Services" }
+    },
+    {
+      "key": "vision",
+      "title": "Our Vision",
+      "image": "/images/our-vission.png",
+      "imageFirst": false,
+      "statement": "To become Mumbai's most trusted real estate advisory partner, known for delivering consistent results, strategic excellence, and strong execution across residential and commercial markets.",
+      "points": [
+        "Build long-term trust with developers and stakeholders",
+        "Strengthen project success through smart execution strategies",
+        "Set new benchmarks in real estate performance and delivery"
+      ],
+      "cta": { "label": "Browse Projects", "href": "#our-projects" }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "team-members",
+  "label": "OUR TEAM",
+  "heading": { "prefix": "Our", "typed": "Team Leading", "suffix": "Our Vision" },
+  "description": "Our leadership brings deep market experience, strategic thinking, and strong execution capability to every real estate project we work on.",
+  "background": "/images/white-bg.jpg",
+  "members": [
+    { "name": "Sameer Chauhan", "role": "FOUNDER & DIRECTOR", "image": "/images/sameer-chauhan-3.jpeg", "bio": "Leads Skyler with strong strategic vision and focuses on structured execution across real estate projects." },
+    { "name": "Amey Morajkar", "role": "FOUNDER & MD", "image": "/images/amay-morajker.png", "bio": "Drives overall business growth, operations, and developer relationships with a focus on consistent performance." },
+    { "name": "Aslam Kapadia", "role": "DIRECTOR BD & ACQUISITION", "image": "/images/aslam-kapadia.png", "bio": "Responsible for business expansion, developer partnerships, and identifying new project opportunities." }
+  ],
+  "strengthHeading": { "prefix": "Our", "typed": "Strength", "suffix": "" },
+  "stats": [
+    { "value": 20, "suffix": "+", "label": "Team Members", "icon": "users" },
+    { "value": 50, "suffix": "+", "label": "Combined Experience", "icon": "user-tie" },
+    { "value": 10, "suffix": "+", "label": "Markets Covered", "icon": "map-marked" },
+    { "value": 98, "suffix": "%", "label": "Client Satisfaction", "icon": "user-check" }
+  ]
+}

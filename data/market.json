@@ -1,0 +1,16 @@
+{
+  "id": "achievements",
+  "label": "WHERE WE OPERATE",
+  "heading": { "prefix": "Market Presence &", "typed": "Expertise", "suffix": "" },
+  "description": "With a strong presence across Mumbai's rapidly growing micro-markets, we specialize in delivering strategic real estate solutions backed by deep local expertise and market understanding.",
+  "background": "/images/white-bg.jpg",
+  "map": "/images/mumbai-map.png",
+  "locationsLeft": ["MIRA ROAD", "KANDIVALI", "MALAD", "GOREGAON", "JOGESHWARI"],
+  "locationsRight": ["ANDHERI", "GHATKOPAR", "MULUND", "THANE", "CHEMBUR"],
+  "stats": [
+    { "value": 15, "prefix": "", "suffix": "+", "lineOne": "Projects", "lineTwo": "Successfully Handled" },
+    { "value": 90, "prefix": "", "suffix": "%", "lineOne": "Project", "lineTwo": "Success Ratio" },
+    { "value": 450, "prefix": "\u20b9", "suffix": "cr+", "lineOne": "Sales", "lineTwo": "Value Delivered" }
+  ],
+  "cta": { "label": "Browse Available Properties", "href": "#our-projects" }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "our-projects",
+  "label": "OUR PROJECTS",
+  "background": "/images/white-bg.jpg",
+  "detailsLabel": "DETAILS",
+  "items": [
+    {
+      "slug": "saroj-sadan",
+      "location": "Malad (East)",
+      "nameFirst": "SAROJ",
+      "nameRest": "SADAN CHS LTD",
+      "nameBreak": true,
+      "image": "/images/projects/saroj-sadan.jpg",
+      "description": "Strategically located in Malad East, Saroj Sadan CHS Ltd. is a thoughtfully planned residential redevelopment project designed to enhance urban living. Surrounded by established infrastructure and key lifestyle conveniences, it offers residents the advantage of a well-connected address."
+    },
+    {
+      "slug": "rose-blossom",
+      "location": "Jogeshwari (East)",
+      "nameFirst": "ROSE",
+      "nameRest": "BLOSSOM",
+      "nameBreak": false,
+      "image": "/images/projects/rose-blossom.jpg",
+      "description": "Experience elevated living at Rose Blossom, where serene green surroundings meet exceptional urban connectivity in Jogeshwari (E). A perfect blend of comfort, lifestyle, and connectivity crafted for contemporary city living."
+    },
+    {
+      "slug": "om-nandadeep",
+      "location": "Kurla (East)",
+      "nameFirst": "OM",
+      "nameRest": "NANDADEEP CHS",
+      "nameBreak": false,
+      "image": "/images/projects/om-nandadeep.jpg",
+      "description": "Located in the heart of Nehru Nagar, Kurla East, OM Nandadeep CHS represents a new benchmark in modern urban living. As the first self-redevelopment project in Kurla East, it combines thoughtful design, contemporary comforts, and a strong community-centric vision."
+    },
+    {
+      "slug": "gurukul-chs",
+      "location": "Vikhroli (East)",
+      "nameFirst": "GURUKUL",
+      "nameRest": "CHS",
+      "nameBreak": false,
+      "image": "/images/projects/gurukul-chsl-scaled.jpg",
+      "description": "Experience modern living at GurukulHeights, Vikhroli (E), thoughtfully designed for comfort and convenience. Enjoy excellent connectivity, everyday essentials nearby, and a well-connected neighbourhood that complements your lifestyle."
+    },
+    {
+      "slug": "green-shadows",
+      "location": "Andheri (East)",
+      "nameFirst": "GREEN",
+      "nameRest": "SHADOWS",
+      "nameBreak": false,
+      "image": "/images/projects/green-shadown.jpg",
+      "description": "Nestled in the vibrant neighborhood of J.B. Nagar, Andheri East, Green Shadows offers a perfect balance between city life and everyday tranquility. Designed for modern families, the project provides well-planned residences in a location known for excellent connectivity and essential conveniences."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "about-us",
+  "label": "ABOUT SKYLER",
+  "heading": { "prefix": "Driven by Strategy.", "typed": "Defined by Execution.", "suffix": "" },
+  "background": "/images/desktop-side-page-skyler.jpeg",
+  "handImage": "/images/marge-hand.png",
+  "markImage": "/images/ai-icon-copy.png",
+  "paragraphs": [
+    "We are a real estate advisory firm working closely with developers to plan, position, and execute sales strategies for residential and commercial projects. Our focus is on delivering structured growth through market insight, strong planning, and on-the-ground execution.",
+    "With a deep understanding of Mumbai's micro-markets, we help projects achieve better visibility, faster movement, and stronger overall performance. Built on trust, expertise, and consistent execution, Skyler delivers results that developers can rely on."
+  ],
+  "points": [
+    "Established in 2019 with a strong presence in Western & Central Mumbai",
+    "Led by experienced real estate professionals",
+    "20+ professionals across sales and execution teams",
+    "Strong on-ground market presence and delivery capability",
+    "Built on integrity, expertise, and a performance-driven approach"
+  ],
+  "cta": { "label": "Explore Projects", "href": "#our-projects" }
+}

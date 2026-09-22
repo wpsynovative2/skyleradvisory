@@ -1,0 +1,33 @@
+{
+  "label": "WHY CHOOSE US",
+  "heading": {
+    "prefix": "Built on Trust,",
+    "typed": "Strategy & Execution",
+    "suffix": ""
+  },
+  "description": "We help developers achieve stronger project outcomes through structured planning, market understanding, and focused execution across Mumbai's key real estate markets.",
+  "image": "/images/projects/gurukul-chsl-scaled.jpg",
+  "watermark": "Why choose us",
+  "items": [
+    {
+      "title": "Proven Track Record",
+      "description": "90% project success ratio with consistent performance across 15+ projects handled"
+    },
+    {
+      "title": "Strong Market Presence",
+      "description": "Active across key Mumbai micro-markets with strong on-ground execution capability"
+    },
+    {
+      "title": "Experienced Leadership",
+      "description": "Seasoned professionals with 50+ combined years of real estate industry experience"
+    },
+    {
+      "title": "Strategic Approach",
+      "description": "Structured planning and execution aligned with project goals and market demand"
+    }
+  ],
+  "cta": {
+    "label": "Partner With Skyler Today",
+    "action": "enquiry"
+  }
+}
